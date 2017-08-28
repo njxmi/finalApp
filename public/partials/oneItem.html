@@ -1,10 +1,26 @@
 <!--
 one item view
 -->
-<div>
-  <p id="image">
+<h1>Outdoor Art In Detroit</h1>
+<div class="longInfo">
+	<p id="image">
 	<img ng-src="{{image}}"/>
-	
 	</p>
+	
+	<p>
+	Title: {{item.title}}
+	</p>
+	<p>
+	Artist: {{item.artist}}
+	</p>
+	<p>
+	Location: {{item.streetaddress}} {{item.city}} {{item.zipcode}}
+	</p>
+	<p>
+	Full description: {{item.longdescription}}
+	</p>
+	
+	
+	
 </div>
 

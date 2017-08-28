@@ -2,10 +2,10 @@
 var app = angular.module("myApp");
 
 // Define a controller named 'oneController'
-app.controller("oneController", function($scope, dataStore) {
+app.controller("oneController", function($scope) {
     // Add an image called "img2.jpg" to the scope for now.
-    $scope.image = 'img2.jpg';
-	$scope.data=dataStore.getData();
+	console.log("testing oneController");
+    $scope.image = 'images/img2.jpg';
 });
 
 })();

@@ -20,3 +20,10 @@ body {
 	color: white;
 }
 
+img {
+	max-width: 20%;
+}
+
+h1 {
+	color: gold;
+}

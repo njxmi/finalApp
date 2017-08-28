@@ -21,40 +21,45 @@ var pool = new pg.Pool({
     ssl: false
 });
 
+//1. get the query working in pgAdmin
+//2. make the /items endpoint
+//3. test the /items endpoint with postman
+//4. in controller, use $http to get the JSON data from the /items endpoint (a.k.a. URL) and set it on the scope.
+
 // GET /items - responds with an array of all info in the database.
-app.get('/items', function(req, res) {
+app.get('/api/items', function(req, res) {
     pool.query("SELECT * FROM outdoorart").then(function(result) {
         res.send(result.rows);
     }).catch(errorCallback(res));
 });
 
-// GET /rooms/{ID} - responds with the one matching room from the database.
-app.get('/items/:votes', function(req, res) {
-    var id = req.params.votes; // <-- This gets the :id part of the URL
-    pool.query("SELECT * FROM outdoorart WHERE votes = $1::int", [votes]).then(function(result) {
-        if (result.rowCount === 0) {
-            res.status(404); // 404 Not Found
-            res.send("NOT FOUND");
-        } else {
+
+// app.get('/items/:votes', function(req, res) {
+    // var id = req.params.artid; // <-- This gets the :id part of the URL
+    // pool.query("SELECT * FROM outdoorart WHERE artid = $1::int", [votes]).then(function(result) {
+        // if (result.rowCount === 0) {
+            // res.status(404); // 404 Not Found
+            // res.send("NOT FOUND");
+        // } else {
             // Return the first result. There should only be one.
-            res.send(result.rows[0]);
-        }
-    }).catch(errorCallback(res));
-});
+            // res.send(result.rows[0]);
+        // }
+    // }).catch(errorCallback(res));
+// });
 
 // PUT /rooms/{votes} - modify value of votes in the database. The item is upvoted or downvoted 
-//by a button on the web page
-app.put('/items/:votes', function(req, res) {
-    var id = req.params.votes; // <-- This gets the :votes part of the URL
-    var room = req.body; // <-- Get the parsed JSON body
-    var sql = "UPDATE Items SET votes = $2::text, capacity = $3::int, available = $4::boolean " +
-              "WHERE id = $1::int";
-    var values = [votes, items.title];
+// by a button on the web page
+// app.put('/items/:votes', function(req, res) {
+    // var id = req.params.votes; // <-- This gets the :votes part of the URL
+    // var room = req.body; // <-- Get the parsed JSON body
+    // var sql = "UPDATE Items SET votes = $2::text, capacity = $3::int, available = $4::boolean " +
+              // "WHERE id = $1::int";
+    // var values = [votes, items.title];
 
-    pool.query(sql, values).then(function() {
-        res.send("UPDATED");
-    }).catch(errorCallback(res));
-});
+    // pool.query(sql, values).then(function() {
+        // res.send("UPDATED");
+    // }).catch(errorCallback(res));
+// });
 
 
 function errorCallback(res) {

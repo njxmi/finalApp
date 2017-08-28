@@ -1,11 +1,26 @@
 <!--
 entire list view
 -->
-<div>
-  <p id="image">
+<h1>Outdoor Art In Detroit</h1>
+<div class="shortInfo" ng-repeat>
+	<p id="image">
 	<img ng-src="{{image}}"/>
-	test text
-	
 	</p>
+	
+	<p>
+	Title: {{item.title}}
+	</p>
+	<p>
+	Artist: {{item.artist}}
+	</p>
+	<p>
+	Location: {{item.streetaddress}} {{item.city}} {{item.zipcode}}
+	</p>
+	<p>
+	Full description: {{item.shortdescription}}
+	</p>
+	
+	
+	
 </div>
 
