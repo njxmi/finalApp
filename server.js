@@ -34,26 +34,13 @@ app.get('/api/items', function(req, res) {
 });
 
 
-// app.get('/items/:votes', function(req, res) {
-    // var id = req.params.artid; // <-- This gets the :id part of the URL
-    // pool.query("SELECT * FROM outdoorart WHERE artid = $1::int", [votes]).then(function(result) {
-        // if (result.rowCount === 0) {
-            // res.status(404); // 404 Not Found
-            // res.send("NOT FOUND");
-        // } else {
-            // Return the first result. There should only be one.
-            // res.send(result.rows[0]);
-        // }
-    // }).catch(errorCallback(res));
-// });
 
-// PUT /rooms/{votes} - modify value of votes in the database. The item is upvoted or downvoted 
+// PUT api/items/{votes} - modify value of votes in the database. The item is upvoted or downvoted 
 // by a button on the web page
-// app.put('/items/:votes', function(req, res) {
+// app.put('api/items/:votes', function(req, res) {
     // var id = req.params.votes; // <-- This gets the :votes part of the URL
     // var room = req.body; // <-- Get the parsed JSON body
-    // var sql = "UPDATE Items SET votes = $2::text, capacity = $3::int, available = $4::boolean " +
-              // "WHERE id = $1::int";
+    // var sql = "UPDATE Items SET votes = ???
     // var values = [votes, items.title];
 
     // pool.query(sql, values).then(function() {

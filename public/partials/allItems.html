@@ -2,9 +2,10 @@
 entire list view
 -->
 <h1>Outdoor Art In Detroit</h1>
-<div class="shortInfo" ng-repeat>
+<div id="shortInfo" ng-repeat="item in items">
+<!-- above line, when active, makes text below disappear -->
 	<p id="image">
-	<img ng-src="{{image}}"/>
+	<img src="{{item.imgpath}}"/>
 	</p>
 	
 	<p>
@@ -17,10 +18,10 @@ entire list view
 	Location: {{item.streetaddress}} {{item.city}} {{item.zipcode}}
 	</p>
 	<p>
-	Full description: {{item.shortdescription}}
+	Description: {{item.shortdescription}}
 	</p>
 	
 	
 	
-</div>
+ </div> 
 

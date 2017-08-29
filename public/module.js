@@ -3,7 +3,7 @@
 
 var app = angular.module('myApp', ['ngRoute']);
 
-
+//routing below, controllers are in their own files
 app.config(function($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl:'partials/allItems.html',

@@ -2,17 +2,18 @@
 var app = angular.module("myApp");
 
 // Define a controller named 'oneController'
-app.controller("oneController", function($scope) {
-    // Add an image called "img2.jpg" to the scope for now.
-	console.log("testing oneController");
-    $scope.image = 'images/img2.jpg';
+app.controller("oneController", function($scope, $http) {
+    console.log("testing oneController");
+	$scope.items = {};
+	//displaying just first item in array for now
+	$http.get('api/items').then(function success(response) {
+    $scope.items = response.data;
+	console.log(response.data[0]);
+});
+	
 });
 
 })();
-
-
-
-
 
 
 

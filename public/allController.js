@@ -2,10 +2,21 @@
 var app = angular.module("myApp");
 
 // Define a controller named 'allController'
-app.controller("allController", function($scope) {
-    // Add the image called "img1.jpg" to the scope for now.
+app.controller("allController", function($scope, $http) {
 	console.log("testing allController");
-    $scope.image = 'images/img1.jpg';
+	$scope.items = {};
+	
+	$http.get('/api/items').then(function success(response) {
+		$scope.items = response.data;
+		console.log(response.data);
+	});
+	
+	// Example from assessment:
+	// $http.get('http://api.example.com/florals')
+           // .then(function success(response){
+              // $scope.florals = response.data;
+			// }
+	
 });
 
 })();
