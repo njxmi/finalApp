@@ -10,13 +10,8 @@ app.controller("allController", function($scope, $http) {
 		$scope.items = response.data;
 		console.log(response.data);
 	});
+
 	
-// $http.post('/api/items', {'outdoorart':votes}).then(function success(response) {
-		// $scope.items = response.data;
-		// console.log(response.data)
-	// });	
-	
-	// };
 
 	
 	// Example from assessment:

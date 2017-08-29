@@ -26,7 +26,7 @@ var pool = new pg.Pool({
 //3. test the /items endpoint with postman
 //4. in controller, use $http to get the JSON data from the /items endpoint (a.k.a. URL) and set it on the scope.
 
-// GET /items - responds with an array of all info in the database.
+// GET /api/items - responds with an array of all info in the database.
 app.get('/api/items', function(req, res) {
     pool.query("SELECT * FROM outdoorart").then(function(result) {
         res.send(result.rows);
@@ -35,18 +35,24 @@ app.get('/api/items', function(req, res) {
 
 
 
-// PUT api/items/{votes} - modify value of votes in the database. The item is upvoted or downvoted 
+// PUT api/items/{votes} - modify value of votes in the database. The item is upvoted 
 // by a button on the web page
-// app.put('api/items/:votes', function(req, res) {
-    // var id = req.params.votes; // <-- This gets the :votes part of the URL
-    // var room = req.body; // <-- Get the parsed JSON body
-    // var sql = "UPDATE Items SET votes = ???
-    // var values = [votes, items.title];
 
-    // pool.query(sql, values).then(function() {
-        // res.send("UPDATED");
-    // }).catch(errorCallback(res));
-// });
+app.put('/api/items/:id/votes', function(req, res) {
+	
+	
+	
+	console.log('nailed it');
+    var id = req.params.id; // <-- This gets the :id part of the URL
+    var sql = "UPDATE outdoorart SET votes = votes + 1 WHERE artid = $1::int";
+    var values = [id];
+
+    pool.query(sql, values).then(function() {
+        res.send("UPDATED");
+    }).catch(errorCallback(res));
+});
+
+//function is called upVote() on view;
 
 
 function errorCallback(res) {
