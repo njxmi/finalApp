@@ -23,7 +23,7 @@ entire list view
 	<p>
 	Rating: {{item.votes}}
 	</p>
-	<button type="submit" id="upvote" ng-click="upVote()">Click to upvote!</button>
+	<button type="button" id="upvote" ng-click="upVote(item.artid)">Click to upvote!</button>
 	<p>
 	<a href="#!/oneItem/{{item.artid}}">Click me for more info!<a>
 	</p>
