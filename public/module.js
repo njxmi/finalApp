@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
 		templateUrl:'partials/allItems.html',
 		controller: "allController"
 	});
-	$routeProvider.when('/oneItem', {
+	$routeProvider.when('/oneItem/:id', {
 		templateUrl:'partials/oneItem.html',
 		controller: "oneController"
 	});
