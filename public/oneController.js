@@ -8,7 +8,13 @@ app.controller("oneController", function($scope, $http, $routeParams) {
 	console.log("the ID is", id);
 	
 		
-		
+		app.directive('longDesc', function(){
+		return{
+		template : "<p>{{item.title}}</p>",
+		controller: "oneController"
+		};
+		console.log ("testing controller");
+		});
 		
 	
 	$http.get('/api/items').then(function success(response) {
@@ -32,24 +38,8 @@ app.controller("oneController", function($scope, $http, $routeParams) {
 			}
 		}
 			
-		// 2. put it on the scope. Call it item.	
-		
-		
-		
-	});
-	
-		
-	
-		
-		
-		
-		
-		
-	
+	});	
 });
-	
-
-
 })();
 
 // function findById(source, id) {

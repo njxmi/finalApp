@@ -1,6 +1,11 @@
 <!--
 entire list view
 -->
+<div id="map">
+
+</div> <!-- closes div id=map -->
+
+<div id="allItems">
 <h1>Outdoor Art In Detroit</h1>
 <div id="shortInfo" ng-repeat="item in items">
 <!-- above line, when active, makes text below disappear -->
@@ -8,18 +13,22 @@ entire list view
 	<img src="{{item.imgpath}}"/>
 	</p>
 	
-	<p>
-	Title: {{item.title}}
-	</p>
-	<p>
-	Artist: {{item.artist}}
-	</p>
-	<p>
-	Location: {{item.streetaddress}} 
-	</p>
-	<p>
-	Description: {{item.shortdescription}}
-	</p>
+  <div short-desc></div> <!-- this is replacing what has been commented out below -->
+
+  
+	<!-- <p>  -->
+	<!-- Title: {{item.title}}  -->
+	 <!-- </p>  -->
+	 <!-- <p>  -->
+	<!-- Artist: {{item.artist}}  -->
+	<!-- </p>  -->
+ <!-- <p>  -->
+	<!-- Location: {{item.streetaddress}}   -->
+	 <!-- </p>  -->
+	 <!-- <p>  -->
+	 <!-- Description: {{item.shortdescription}}  -->
+	 <!-- </p> -->
+	
 	<p>
 	Rating: {{item.votes}}
 	</p>
@@ -30,5 +39,7 @@ entire list view
 	
 	
 	
- </div> 
+
+ </div> <!-- closes id=shortInfo div -->
+ </div> <!-- closes id=allItems div -->
 

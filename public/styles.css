@@ -14,16 +14,33 @@ html, body {
 
  /* End of styles for map  */
 
+#shortInfo {
+	padding-left: 25%;
+	padding-bottom: 50px;
+}	
 
 body {
 	background-color: black;
 	color: white;
 }
 
-img {
-	max-width: 20%;
+#upvote {
+	background-color: green;
 }
 
 h1 {
 	color: gold;
+	font-family: Calligraffitti;
+	text-align: center;
+}	
+
+img {
+	max-width: 20%;
 }
+
+a {
+	font-family: Shadows Into Light;
+	color: yellow;
+}
+
+

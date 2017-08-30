@@ -1,16 +1,32 @@
+
+
+
+
 (function() {
 var app = angular.module("myApp");
+
+app.directive('shortDesc', function(){
+	return{
+template: '<p>Title: {{item.title}}</p> <p>Artist: {{item.artist}}</p> <p>Location: {{item.streetaddress}}</p> <p>Description: {{item.shortdescription}}</p>'
+	};	
+});
+
 
 // Define a controller named 'allController'
 app.controller("allController", function($scope, $http) {
 	console.log("testing allController");
 	$scope.items = {};
 	
+		
+
+
+	
 	$http.get('/api/items').then(function success(response) {
 		$scope.items = response.data;
 		console.log(response.data);
 	}); //this loads data, could use to refresh page below
 
+	
 	
 	
 	$scope.upVote = function(id) {
@@ -22,19 +38,13 @@ app.controller("allController", function($scope, $http) {
 			console.log(response.data);
 			}); //ideally would have a function you can call more than once, this was a quick way to make it work
 		});	
-		
 	};
-
-	
-	// Example from assessment:
-	// $http.get('http://api.example.com/florals')
-           // .then(function success(response){
-              // $scope.florals = response.data;
-			// }
 	
 });
 
-})();
+		
+
+})(); //closes IIFE
 
 //formats for get, post:
 
