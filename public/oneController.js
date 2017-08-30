@@ -4,7 +4,7 @@ var app = angular.module("myApp");
 // Define a controller named 'oneController'
 app.controller("oneController", function($scope, $http, $routeParams) {
     console.log("testing oneController");
-	var id = parseInt($routeParams.id);
+	var id = parseInt($routeParams.id); //routeParams gets id from the url, parse changes it from string to number
 	console.log("the ID is", id);
 	
 		
@@ -42,32 +42,5 @@ app.controller("oneController", function($scope, $http, $routeParams) {
 });
 })();
 
-// function findById(source, id) {
-  // for (var i = 0; i < source.length; i++) {
-    // if (source[i].id === id) {
-      // return source[i];
-    // }
 
-
-
-//ex. code to find object in array by a property:
- // function FindTaskById(task) {
-
-        // if (task.Id === this[0] {
-            // return task;
-        // }
-    // }
-
-    // var task = tasks.find(FindTaskById, ['4', '67']);
-    // console.log(JSON.stringify(task));
-
-
-//voting button will probably be on single view page only
-	
-// $http.post('/api/items', {'outdoorart':votes}).then(function success(response) {
-		// $scope.items = response.data;
-		// console.log(response.data)
-	// });	
-	
-	// };
 

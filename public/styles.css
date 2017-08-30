@@ -1,37 +1,37 @@
 /* Start of Styles for Map  */
+#mapDemo {
+			padding-left: 75%;
+			width: 500px;
+}
 
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-#map {
-  height: 100%;
-}
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+ /* #map {  */
+        /* height: 400px;  */
+         /* width: 25%;  */
+        /* }  */
 
  /* End of styles for map  */
 
 #shortInfo {
-	padding-left: 25%;
+	padding-left: 15%;
 	padding-bottom: 50px;
 }	
 
 body {
-	background-color: black;
+	background-color: grey;
 	color: white;
 }
 
 #upvote {
 	background-color: green;
+	color: white;
 }
 
 h1 {
 	color: gold;
 	font-family: Calligraffitti;
 	text-align: center;
+	border-radius: 5px;
+	border: 1px solid silver;
 }	
 
 img {

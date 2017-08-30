@@ -28,7 +28,7 @@ var pool = new pg.Pool({
 
 // GET /api/items - responds with an array of all info in the database.
 app.get('/api/items', function(req, res) {
-    pool.query("SELECT * FROM outdoorart").then(function(result) {
+    pool.query("SELECT * FROM outdoorart ORDER BY votes DESC").then(function(result) {
         res.send(result.rows);
     }).catch(errorCallback(res));
 });

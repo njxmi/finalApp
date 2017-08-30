@@ -1,7 +1,3 @@
-
-
-
-
 (function() {
 var app = angular.module("myApp");
 
@@ -12,7 +8,10 @@ template: '<p>Title: {{item.title}}</p> <p>Artist: {{item.artist}}</p> <p>Locati
 });
 
 
-// Define a controller named 'allController'
+//Below - add funtion to add Google Map with markers
+
+	  
+// Below defines a controller named 'allController'
 app.controller("allController", function($scope, $http) {
 	console.log("testing allController");
 	$scope.items = {};
@@ -27,7 +26,7 @@ app.controller("allController", function($scope, $http) {
 	}); //this loads data, could use to refresh page below
 
 	
-	
+	//make a function for upVote and set it on the scope
 	
 	$scope.upVote = function(id) {
 		console.log('clicked', id);
@@ -45,6 +44,8 @@ app.controller("allController", function($scope, $http) {
 		
 
 })(); //closes IIFE
+
+
 
 //formats for get, post:
 
