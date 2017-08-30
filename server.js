@@ -1,4 +1,5 @@
 //modify for final app
+var pool = require("./pg-connection-pool");
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -9,17 +10,6 @@ var app = express();
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
-
-// Set up a connection pool with which to access the database in all the
-// operations below.
-var pool = new pg.Pool({
-    user: "postgres",
-    password: "password",
-    host: "localhost",
-    port: 5432,
-    database: "postgres",
-    ssl: false
-});
 
 //1. get the query working in pgAdmin
 //2. make the /items endpoint
@@ -67,3 +57,5 @@ var port = process.env.PORT || 5000;
 app.listen(port, function () {
   console.log('JSON Server is running on ' + port);
 });
+
+

@@ -1,6 +1,5 @@
 (function() {
 var app = angular.module("myApp");
-
 app.directive('shortDesc', function(){
 	return{
 template: '<p>Title: {{item.title}}</p> <p>Artist: {{item.artist}}</p> <p>Location: {{item.streetaddress}}</p> <p>Description: {{item.shortdescription}}</p>'
